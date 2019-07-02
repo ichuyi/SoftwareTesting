@@ -65,9 +65,12 @@ public class Employ {
   }
 
   private void caculate() {
-    if (this.valid) {
+    if (!this.valid) {
       this.result = -1;
       this.bonus = -1;
+      this.x=-1;
+      this.y=-1;
+      this.z=-1;
     } else {
       this.total = this.z * 25 + this.y * 30 + this.z * 45;
       if (this.total <= 1000) {
