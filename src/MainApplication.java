@@ -1,5 +1,6 @@
 import exercise.Calendar;
 import exercise.Telecom;
+import  exercise.Triangle;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +25,10 @@ public class MainApplication {
       input = br.readLine();
       select = input.charAt(0);
       switch (select) {
+        case'2':{
+          Triangle.exec();
+          break;
+        }
         case '4': {
           Calendar.exec();
           break;
