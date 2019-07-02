@@ -7,8 +7,8 @@ import static java.lang.Integer.parseInt;
 public class Triangle {
     public static void exec(){
         try {
-            BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/7.csv")), "GBK"));
-            BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/7_res.csv")),
+            BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/2.csv")), "GBK"));
+            BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/2_res.csv")),
                     "GBK"));
             String lineTxt = null;
             output.write("a,b,c,预期输出，实际输出");
