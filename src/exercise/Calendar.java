@@ -23,7 +23,7 @@ public class Calendar {
   }
 
   private void setYear(int year) {
-    if (year <= 0 || year > 5000) {
+    if (year < 1900 || year > 2300) {
       this.valid = false;
     }
     this.year = year;
