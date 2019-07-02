@@ -1,8 +1,6 @@
 package exercise;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
 
 public class Calendar {
   private int year;
@@ -110,6 +108,7 @@ public class Calendar {
       input.close();
       output.close();
       System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果准确率为" + ((float) correct) * 100 / sum + "%");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入7_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }

@@ -22,6 +22,9 @@ public class Telecom {
 
   private void setLast(double last) {
     this.last = last;
+    if (this.last < 0) {
+      this.valid = false;
+    }
   }
 
   public double getLastRate() {
@@ -105,7 +108,11 @@ public class Telecom {
   private boolean valid = true;
 
   private void calculate() {
-    this.result = this.last * this.lastRate + this.basic + (1 - this.discount) * this.time * this.feePer;
+    if (!this.valid) {
+      this.result = -1;
+    } else {
+      this.result = this.last * this.lastRate + this.basic + (1 - this.discount) * this.time * this.feePer;
+    }
   }
 
   private boolean equal(double res) {
@@ -142,6 +149,7 @@ public class Telecom {
       input.close();
       output.close();
       System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果准确率为" + ((float) correct) * 100 / sum + "%");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入6_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }
