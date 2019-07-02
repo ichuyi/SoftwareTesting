@@ -1,5 +1,7 @@
 package exercise;
 
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.io.*;
 
 public class Calendar {
@@ -50,7 +52,7 @@ public class Calendar {
   }
 
   private void setDay(int day) {
-    if (!this.valid||day <= 0 || day > this.days[this.month - 1]) {
+    if (!this.valid || day <= 0 || day > this.days[this.month - 1]) {
       this.valid = false;
     }
     this.day = day;
@@ -72,18 +74,19 @@ public class Calendar {
       this.month = 0;
       this.year = 0;
     }
+    this.valid = true;
   }
 
   public boolean equal(int year, int month, int day) {
     return this.year == year && this.month == month && this.day == day;
   }
 
-  public static void exec() {
+  public static void exec(String id) {
     try {
       System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t开始测试");
       Calendar calendar = new Calendar();
-      BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/7.csv")), "GBK"));
-      BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/7_res.csv")),
+      BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/" + id + ".csv")), "GBK"));
+      BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/" + id + "_res.csv")),
               "GBK"));
       String lineTxt = null;
       output.write("输入年份,输入月份,输入天数,期望年份,期望月份,期望天数,输出年份,输出天数,输出日期");
@@ -108,7 +111,7 @@ public class Calendar {
       input.close();
       output.close();
       System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果准确率为" + ((float) correct) * 100 / sum + "%");
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入7_res.csv文件");
+      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入" + id + "_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }
