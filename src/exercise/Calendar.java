@@ -1,6 +1,6 @@
 package exercise;
 
-import jdk.swing.interop.SwingInterOpUtils;
+//import jdk.swing.interop.SwingInterOpUtils;
 
 import java.io.*;
 
@@ -83,7 +83,7 @@ public class Calendar {
 
   public static void exec(String id) {
     try {
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t开始测试");
+      System.out.println("开始测试");
       Calendar calendar = new Calendar();
       BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/" + id + ".csv")), "GBK"));
       BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/" + id + "_res.csv")),
@@ -110,8 +110,8 @@ public class Calendar {
       output.flush();
       input.close();
       output.close();
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果准确率为" + ((float) correct) * 100 / sum + "%");
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入" + id + "_res.csv文件");
+      System.out.println("测试结果准确率为" + ((float) correct) * 100 / sum + "%");
+      System.out.println("测试结果已经写入" + id + "_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }

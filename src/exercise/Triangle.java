@@ -7,7 +7,7 @@ import static java.lang.Integer.parseInt;
 public class Triangle {
   public static void exec() {
     try {
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t开始测试");
+      System.out.println("开始测试");
       BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/2.1.csv")), "UTF-8"));
       BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/2.1_res.csv")),
               "GBK"));
@@ -36,7 +36,7 @@ public class Triangle {
       output.flush();
       input.close();
       output.close();
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入2.1_res.csv文件");
+      System.out.println("测试结果已经写入2.1_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }

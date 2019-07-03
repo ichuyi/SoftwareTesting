@@ -121,7 +121,7 @@ public class Telecom {
 
   public static void exec() {
     try {
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t开始测试");
+      System.out.println("开始测试");
       Telecom telecom = new Telecom();
       BufferedReader input = new BufferedReader(new InputStreamReader(new FileInputStream(new File("src/6.csv")), "GBK"));
       BufferedWriter output = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File("src/6_res.csv")),
@@ -148,8 +148,8 @@ public class Telecom {
       output.flush();
       input.close();
       output.close();
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果准确率为" + ((float) correct) * 100 / sum + "%");
-      System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t测试结果已经写入6_res.csv文件");
+      System.out.println("测试结果准确率为" + ((float) correct) * 100 / sum + "%");
+      System.out.println("测试结果已经写入6_res.csv文件");
     } catch (Exception e) {
       System.out.println("测试失败");
     }
